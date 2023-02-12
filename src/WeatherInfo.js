@@ -1,20 +1,21 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 
 function WeatherInfo(props) {
   return (
-    <div className="WeatherImfo">
+    <div className="WeatherInfo">
       <h1>{props.data.cityName}</h1>
       <ul>
         <li>
           <FormattedDate date={props.data.date} />
         </li>
-        <li>{props.data.condition}</li>
+        <li className="conditions">{props.data.conditions}</li>
       </ul>
 
       <div className="row mt-3">
         <div className="col-6 currentCondition">
-          <img src={props.data.iconURL} alt={props.data.iconAlt} />
+          <WeatherIcon code={props.data.icon} />
           <span className="temperature">
             {Math.round(props.data.temperature)}
           </span>

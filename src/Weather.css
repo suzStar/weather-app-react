@@ -26,6 +26,10 @@
     list-style: none;
 }
 
+.Weather .conditions {
+    text-transform: capitalize;
+}
+
 .Weather .currentCondition {
     display: flex;
     align-items: start;
