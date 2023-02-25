@@ -18,8 +18,11 @@ function FormattedDate(props) {
   let leadingMinutes = minutes < 10 ? `0${minutes}` : minutes;
 
   return (
-    <div>
-      {day}, {leadingHours}:{leadingMinutes}
+    <div className="dayTime">
+      <span className="me-3">{day}</span> •{" "}
+      <span className="ms-3">
+        {leadingHours}:{leadingMinutes}
+      </span>
     </div>
   );
 }

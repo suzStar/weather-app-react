@@ -1,11 +1,8 @@
 .Weather {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border: 1px solid #dcdde1;
-    border-radius: 5px;
-    padding: 16px;
-    color: #878787;
+    color: #E7E7EB;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
 }
-
 
 .Weather h1 {
     font-size: 24px;
@@ -14,55 +11,67 @@
     margin-top: 20px;
 }
 
-.Weather ul {
-    margin: 0;
-    padding: 0;
+.Weather form {
+    z-index: 1;
+    width: 370px;
+    margin: 40px auto 0 30px;
+    padding-top: 40px;
 }
 
-.Weather li {
-    font-size: 16px;
-    font-weight: 100;
-    line-height: 19px;
-    list-style: none;
+.Weather .dailyIcon {
+    margin: 150px auto 0;
 }
 
-.Weather .conditions {
-    text-transform: capitalize;
+.Weather .currentTemp {
+    color: #A09FB1;
+    margin: 50px auto 30px;
 }
 
-.Weather .currentCondition {
-    display: flex;
-    align-items: start;
-}
-
-.Weather img {
-    width: 64px;
+.Weather .dayTime {
+    margin-top: 60px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #A09FB1;
 }
 
 .Weather .temperature {
-    margin-left: 10px;
-    font-weight: 400;
-    color: #141414;
-    font-size: 64px;
-    line-height: 55px;
+    font-size: 144px;
+    font-weight: 500;
+    line-height: 169px;
+    letter-spacing: 0em;
 }
 
 .Weather a {
-    font-weight: lighter;
+    font-weight: 100;
     text-decoration: none;
     color: #878787;
 }
+
 .Weather a:hover {
     font-weight: lighter;
     text-decoration: underline;
-    color: #2f0ed7;
+    color: #A09FB1;
 }
+
 .Weather .unit {
-    color: #3b3737;
-    font-size: 16px;
-    font-weight: bold;
-    position: relative;
-    line-height: 1;
-    margin-left: 5px;
-    bottom: 30px;
+    color: #E7E7EB;
+    font-size: 25px;
+}
+
+.Weather .conditions {
+    margin-top: 80px;
+    text-transform: capitalize;
+    color: #A09FB1;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 42px;
+}
+
+.WeatherInfo {
+    position: absolute;
+    width: 460px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #1E213A;
 }

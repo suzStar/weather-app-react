@@ -1,0 +1,21 @@
+.WeatherData {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #E7E7EB;
+    background: #100E1D;
+    position: absolute;
+    width: 740px;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.WeatherData .weeklyForcast {
+    background: #1E213A;
+}
+
+.WeatherData .weeklyForcastLowTemp {
+    color: #A09FB1;
+    margin-left: 5px;
+}

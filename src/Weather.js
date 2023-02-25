@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { FaSistrix } from "react-icons/fa";
+import { MdOutlineMyLocation } from "react-icons/md";
+
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import WeatherData from "./WeatherData";
 
 function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -39,26 +43,27 @@ function Weather(props) {
     return (
       <div className="Weather">
         <form onSubmit={handleSumbit}>
-          <div className="row">
-            <div className="col-9">
-              <input
-                type="search"
-                placeholder="Enter a city"
-                className="form-control"
-                autoFocus="on"
-                onChange={handleCityChange}
-              />
-            </div>
-            <div className="col-3">
-              <input
-                type="submit"
-                value="Search"
-                className="btn btn-primary w-100"
-              />
-            </div>
+          <div className="form input-group">
+            <span className="input-group-text bg-white">
+              <FaSistrix color="#616475" />
+            </span>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search Location"
+              autoFocus="on"
+              onChange={handleCityChange}
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+
+            <i className="btn bg-primary ">
+              <MdOutlineMyLocation color="white" />
+            </i>
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+        <WeatherData data={weatherData} />
       </div>
     );
   } else {

@@ -1,3 +1,5 @@
+import React from "react";
+
 function WeatherIcon(props) {
   const codeMapping = {
     "clear-sky-day":
@@ -37,6 +39,6 @@ function WeatherIcon(props) {
     "mist-night":
       "https://basmilius.github.io/weather-icons/production/fill/all/fog-night.svg",
   };
-  return <img src={codeMapping[props.code]} alt={props.code} />;
+  return <img src={codeMapping[props.code]} alt={props.code} width={props.size}/>;
 }
 export default WeatherIcon;
