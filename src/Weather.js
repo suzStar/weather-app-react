@@ -19,6 +19,7 @@ function Weather(props) {
       icon: response.data.condition.icon,
       temperature: response.data.temperature.current,
       windSpeed: response.data.wind.speed,
+      windDegree: response.data.wind.degree,
       humdity: response.data.temperature.humidity,
       precipitation: response.data,
     });

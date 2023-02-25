@@ -16,10 +16,10 @@ function WeatherInfo(props) {
 
       <span className="conditions">{props.data.conditions}</span>
       <FormattedDate date={props.data.date} />
-      <h1 className="justify-content-end">
-        <MdLocationOn color="#88869D" />
+      <p className="mt-2 cityName">
+        <MdLocationOn color="#88869D" size="20px" />
         {props.data.cityName}
-      </h1>
+      </p>
     </div>
   );
 }

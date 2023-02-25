@@ -9,6 +9,7 @@
     font-weight: 100;
     line-height: 29px;
     margin-top: 20px;
+    text-align: left;
 }
 
 .Weather form {
@@ -56,6 +57,10 @@
 .Weather .unit {
     color: #E7E7EB;
     font-size: 25px;
+}
+
+.Weather .cityName {
+    font-size: 18px;
 }
 
 .Weather .conditions {

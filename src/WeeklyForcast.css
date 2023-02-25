@@ -19,3 +19,67 @@
     color: #A09FB1;
     margin-left: 5px;
 }
+
+.WindData {
+    margin-left: 80px;
+    height: 200px;
+    background: #1E213A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.HumidityData {
+    margin-right: 80px;
+    height: 200px;
+    background: #1E213A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.WeatherData .windSpeed {
+    margin: 15px auto 40px;
+    font-size: 64px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.WeatherData .speedUnit {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 42px;
+}
+
+
+.WeatherData .windDirectionIcon {
+    width: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
+}
+
+.WeatherData .windDirection {
+    padding-left: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.WeatherData .humidityBar {
+    width: 229px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #A09FB1;
+}
+
+.WeatherData .footerKey {
+    margin-left: auto;
+}
