@@ -19,7 +19,7 @@ function HumidityData(props) {
             width="229px"
             bgColor="#FFEC65"
             baseBgColor="#E7E7EB"
-            isLabelVisible="false"
+            isLabelVisible={false}
             height="8px"
             margin="3px 0"
           />

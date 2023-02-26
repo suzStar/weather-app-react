@@ -1,20 +1,48 @@
 import React from "react";
-import ShortHandDate from "./ShortHandDate";
 import WeatherIcon from "./WeatherIcon";
 
 function WeeklyForcast(props) {
+  function ShortHandDate() {
+    let date = new Date(props.daysOfWeek * 1000);
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    let day = days[date.getDay()];
+    let todayDate = date.getDate();
+    let month = months[date.getMonth()];
+
+    return (
+      <div>
+        {day}, {todayDate} {month}
+      </div>
+    );
+  }
   return (
     <div className="WeeklyForcast">
-      <h1>hello</h1>
-      {/* <div>
-        <ShortHandDate date={props.data.date} />
-      </div> */}
-      {/* <div>
-        <WeatherIcon code={props.data.icon} size={"62px"} />
-      </div> */}
+      <div>{ShortHandDate()}</div>
       <div>
-        <span className="weeklyForcastHighTemp">90 </span>
-        <span className="weeklyForcastLowTemp"> 10</span>
+        <WeatherIcon code={props.weeklyIcon} size={"65px"} height={"90px"} />
+      </div>
+      <div>
+        <span className="weeklyForcastHighTemp">
+          {Math.round(props.maxTemp)}°{" "}
+        </span>
+        <span className="weeklyForcastLowTemp">
+          {" "}
+          {Math.round(props.minTemp)}°
+        </span>
       </div>
     </div>
   );

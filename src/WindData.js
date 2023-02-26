@@ -29,7 +29,7 @@ function WindData(props) {
 
   return (
     <div className="WindData">
-      <p>Wind status</p>
+      <p>Wind Status</p>
       <div className="windSpeed">
         {Math.round(props.windSpeed)}
         <span className="speedUnit">mph</span>

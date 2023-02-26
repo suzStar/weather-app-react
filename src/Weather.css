@@ -12,71 +12,16 @@
     text-align: left;
 }
 
-.Weather form {
-    z-index: 1;
-    width: 370px;
-    margin: 40px auto 0 30px;
-    padding-top: 40px;
-}
 
-.Weather .dailyIcon {
-    margin: 150px auto 0;
-}
-
-.Weather .currentTemp {
-    color: #A09FB1;
-    margin: 50px auto 30px;
-}
-
-.Weather .dayTime {
-    margin-top: 60px;
-    font-size: 18px;
-    font-weight: 500;
-    color: #A09FB1;
-}
-
-.Weather .temperature {
-    font-size: 144px;
-    font-weight: 500;
-    line-height: 169px;
-    letter-spacing: 0em;
-}
-
-.Weather a {
-    font-weight: 100;
-    text-decoration: none;
-    color: #878787;
-}
-
-.Weather a:hover {
-    font-weight: lighter;
-    text-decoration: underline;
-    color: #A09FB1;
-}
-
-.Weather .unit {
-    color: #E7E7EB;
-    font-size: 25px;
-}
-
-.Weather .cityName {
-    font-size: 18px;
-}
-
-.Weather .conditions {
-    margin-top: 80px;
-    text-transform: capitalize;
-    color: #A09FB1;
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 42px;
-}
-
-.WeatherInfo {
-    position: absolute;
-    width: 460px;
-    top: 0;
-    left: 0;
-    z-index: -1;
+.leftPanel {
+    padding: 50px 50px 40px;
     background: #1E213A;
+}
+
+.WeatherData {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    background: #100E1D;
+    padding: 80px 50px 30px;
 }

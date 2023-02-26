@@ -21,7 +21,8 @@ function Weather(props) {
       windSpeed: response.data.wind.speed,
       windDegree: response.data.wind.degree,
       humdity: response.data.temperature.humidity,
-      precipitation: response.data,
+      feelsLike: response.data.temperature.feels_like,
+      pressure: response.data.temperature.pressure,
     });
   }
 
@@ -43,28 +44,35 @@ function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form onSubmit={handleSumbit}>
-          <div className="form input-group">
-            <span className="input-group-text bg-white">
-              <FaSistrix color="#616475" />
-            </span>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search Location"
-              autoFocus="on"
-              onChange={handleCityChange}
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
+        <div className="row g-0">
+          <div className="col-4 leftPanel">
+            <form onSubmit={handleSumbit}>
+              <div className="form input-group">
+                <span className="input-group-text bg-white">
+                  <FaSistrix color="#616475" />
+                </span>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search Location"
+                  autoFocus="on"
+                  onChange={handleCityChange}
+                  aria-label="Search"
+                  aria-describedby="search-addon"
+                />
 
-            <i className="btn bg-primary ">
-              <MdOutlineMyLocation color="white" />
-            </i>
+                <i className="btn bg-primary ">
+                  <MdOutlineMyLocation color="white" />
+                </i>
+              </div>
+            </form>
+
+            <WeatherInfo data={weatherData} />
           </div>
-        </form>
-        <WeatherInfo data={weatherData} />
-        <WeatherData data={weatherData} />
+          <div className="col-8">
+            <WeatherData data={weatherData} />
+          </div>
+        </div>
       </div>
     );
   } else {

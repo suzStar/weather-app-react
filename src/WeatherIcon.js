@@ -39,6 +39,13 @@ function WeatherIcon(props) {
     "mist-night":
       "https://basmilius.github.io/weather-icons/production/fill/all/fog-night.svg",
   };
-  return <img src={codeMapping[props.code]} alt={props.code} width={props.size}/>;
+  return (
+    <img
+      src={codeMapping[props.code]}
+      alt={props.code}
+      width={props.size}
+      height={props.height}
+    />
+  );
 }
 export default WeatherIcon;
