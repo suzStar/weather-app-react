@@ -19,46 +19,15 @@ function WeatherData(props) {
     return (
       <div className="WeatherData">
         <div className="row d-flex justify-content-between mt-3">
-          <div className="col">
-            <WeeklyForcast
-              daysOfWeek={forecast[1].time}
-              weeklyIcon={forecast[1].condition.icon}
-              minTemp={forecast[1].temperature.minimum}
-              maxTemp={forecast[1].temperature.maximum}
-            />
-          </div>
-          <div className="col">
-            <WeeklyForcast
-              daysOfWeek={forecast[2].time}
-              weeklyIcon={forecast[2].condition.icon}
-              minTemp={forecast[2].temperature.minimum}
-              maxTemp={forecast[2].temperature.maximum}
-            />
-          </div>
-          <div className="col">
-            <WeeklyForcast
-              daysOfWeek={forecast[3].time}
-              weeklyIcon={forecast[3].condition.icon}
-              minTemp={forecast[3].temperature.minimum}
-              maxTemp={forecast[3].temperature.maximum}
-            />
-          </div>
-          <div className="col">
-            <WeeklyForcast
-              daysOfWeek={forecast[4].time}
-              weeklyIcon={forecast[4].condition.icon}
-              minTemp={forecast[4].temperature.minimum}
-              maxTemp={forecast[4].temperature.maximum}
-            />
-          </div>
-          <div className="col">
-            <WeeklyForcast
-              daysOfWeek={forecast[5].time}
-              weeklyIcon={forecast[5].condition.icon}
-              minTemp={forecast[5].temperature.minimum}
-              maxTemp={forecast[5].temperature.maximum}
-            />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index > 0 && index < 6) {
+              return (
+                <div className="col" key={index}>
+                  <WeeklyForcast forecastData={dailyForecast} />
+                </div>
+              );
+            }
+          })}
         </div>
         <h1>Todays Highlights</h1>
         <div className="row">

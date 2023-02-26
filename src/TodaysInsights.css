@@ -1,14 +1,14 @@
 .Weather .dailyIcon {
-    margin: 150px auto 0;
+    margin: 130px auto 0;
 }
 
 .Weather .currentTemp {
     color: #A09FB1;
-    margin: 50px auto 30px;
+    margin: 45px auto 30px;
 }
 
 .Weather .dayTime {
-    margin-top: 60px;
+    margin-top: 50px;
     font-size: 18px;
     font-weight: 500;
     color: #A09FB1;

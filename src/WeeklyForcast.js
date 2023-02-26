@@ -2,8 +2,12 @@ import React from "react";
 import WeatherIcon from "./WeatherIcon";
 
 function WeeklyForcast(props) {
+  let daysOfWeek = props.forecastData.time;
+  let iconDescription = props.forecastData.condition.icon;
+  let minimumTemp = props.forecastData.temperature.minimum;
+  let maximumTemp = props.forecastData.temperature.maximum;
   function ShortHandDate() {
-    let date = new Date(props.daysOfWeek * 1000);
+    let date = new Date(daysOfWeek * 1000);
     const days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
     const months = [
       "Jan",
@@ -29,19 +33,20 @@ function WeeklyForcast(props) {
       </div>
     );
   }
+
   return (
     <div className="WeeklyForcast">
       <div>{ShortHandDate()}</div>
       <div>
-        <WeatherIcon code={props.weeklyIcon} size={"65px"} height={"90px"} />
+        <WeatherIcon code={iconDescription} size={"65px"} height={"90px"} />
       </div>
       <div>
         <span className="weeklyForcastHighTemp">
-          {Math.round(props.maxTemp)}°{" "}
+          {Math.round(maximumTemp)}°{" "}
         </span>
         <span className="weeklyForcastLowTemp">
           {" "}
-          {Math.round(props.minTemp)}°
+          {Math.round(minimumTemp)}°
         </span>
       </div>
     </div>
