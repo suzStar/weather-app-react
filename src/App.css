@@ -1,6 +1,7 @@
 .App {
-    border-radius: 12px;
-    margin: 0 auto;
-    height: 900px;
-    width: 1300px;
+  border-radius: 12px;
+  margin: 0 auto;
+  /* height: 900px; */
+  width: 1300px;
+  background: #100e1d;
 }

@@ -1,19 +1,19 @@
 .Weather {
-    color: #E7E7EB;
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    padding: 10px;
+  color: #e7e7eb;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  padding: 10px;
 }
 
 .leftPanel {
-    padding: 40px 50px 0;
-    background: #1E213A;
+  padding: 40px 40px 0;
+  background: #1e213a;
 }
 
 .WeatherData {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19px;
-    background: #100E1D;
-    padding: 80px 50px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  background: #100e1d;
+  padding: 80px 50px 20px;
 }
