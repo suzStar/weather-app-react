@@ -42,11 +42,11 @@ function WeeklyForcast(props) {
       </div>
       <div>
         <span className="weeklyForcastHighTemp">
-          {Math.round(maximumTemp)}°{" "}
+          {Math.round(maximumTemp)}°{props.units}
         </span>
         <span className="weeklyForcastLowTemp">
           {" "}
-          {Math.round(minimumTemp)}°
+          {Math.round(minimumTemp)}°{props.units}
         </span>
       </div>
     </div>

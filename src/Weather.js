@@ -10,6 +10,8 @@ import WeatherData from "./WeatherData";
 function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const [unit, setUnit] = useState("metric");
+  const [currentUnit, setCurrentUnit] = useState("C");
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -28,8 +30,9 @@ function Weather(props) {
 
   function search() {
     const apiKey = "d04fb3e0250t4fa0be3579oeba197b2c";
-    let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
     axios.get(apiURL).then(handleResponse);
+    console.log(apiURL);
   }
 
   function handleSumbit(event) {
@@ -40,6 +43,16 @@ function Weather(props) {
   function handleCityChange(event) {
     setCity(event.target.value);
   }
+
+  const handleUnitsClick = (e) => {
+    const button = e.currentTarget;
+    const currentUnit = button.innerText.slice(1);
+
+    const isCelius = currentUnit === "C";
+    button.innerText = isCelius ? "F" : "C";
+    setUnit(isCelius ? "metric" : "imperial");
+    setCurrentUnit(isCelius ? "C" : "F");
+  };
 
   if (weatherData.ready) {
     return (
@@ -67,10 +80,40 @@ function Weather(props) {
               </div>
             </form>
 
-            <WeatherInfo data={weatherData} />
+            <WeatherInfo
+              data={weatherData}
+              selectedUnit={unit}
+              currentUnit={currentUnit}
+            />
           </div>
           <div className="col-8">
-            <WeatherData data={weatherData} />
+            <div className="btn-group btn-group-toggle" data-toggle="buttons">
+              <label className="btn btn-secondary rounded-circle active">
+                <input
+                  type="radio"
+                  name="options"
+                  id="option1"
+                  autocomplete="off"
+                  onClick={(e) => handleUnitsClick(e)}
+                  defaultChecked
+                />{" "}
+                °C
+              </label>
+              <label className="btn rounded-circle btn-secondary">
+                <input
+                  type="radio"
+                  name="options"
+                  id="option2"
+                  autocomplete="off"
+                />{" "}
+                °F
+              </label>
+            </div>
+            <WeatherData
+              data={weatherData}
+              selectedUnit={unit}
+              currentUnit={currentUnit}
+            />
           </div>
         </div>
       </div>

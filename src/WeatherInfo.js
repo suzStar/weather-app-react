@@ -2,17 +2,18 @@ import React from "react";
 import "./TodaysInsights.css";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
-import WeatherTemperature from "./WeatherTemperature";
 import { MdLocationOn } from "react-icons/md";
 
 function WeatherInfo(props) {
+  const tempCurrnet = Math.round(props.data.temperature);
   return (
     <div className="WeatherInfo">
       <div className="dailyIcon">
         <WeatherIcon code={props.data.icon} size={"202px"} height={"202px"} />
       </div>
       <div className="currentTemp">
-        <WeatherTemperature celsius={props.data.temperature} />
+        <span className="temperature">{tempCurrnet}</span>
+        <span className="unit">°{props.currentUnit}</span>
       </div>
 
       <span className="conditions">{props.data.conditions}</span>

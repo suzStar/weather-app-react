@@ -27,7 +27,10 @@ function WeatherData(props) {
             if (index > 0 && index < 6) {
               return (
                 <div className="col" key={index}>
-                  <WeeklyForcast forecastData={dailyForecast} />
+                  <WeeklyForcast
+                    forecastData={dailyForecast}
+                    units={props.currentUnit}
+                  />
                 </div>
               );
             }
@@ -77,7 +80,8 @@ function WeatherData(props) {
   } else {
     const apiKey = "d04fb3e0250t4fa0be3579oeba197b2c";
     let city = props.data.cityName;
-    let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+    let unit = props.selectedUnit;
+    let apiURL = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=${unit}`;
     axios.get(apiURL).then(handleResponse);
     return null;
   }
