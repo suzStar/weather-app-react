@@ -41,7 +41,7 @@ function WeatherData(props) {
           <div className="col-6 mb-3">
             <WindData
               windSpeed={props.data.windSpeed}
-              windDirection={props.data.windDirection}
+              windDirection={props.data.windDegree}
             />
           </div>
           <div className="col-6 mb-3">
