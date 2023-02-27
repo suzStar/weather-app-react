@@ -12,7 +12,7 @@ function WeatherData(props) {
 
   useEffect(() => {
     setLoad(false);
-  }, [props.data.cityName]);
+  }, [props.data.cityName, props.selectedUnit]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaSistrix } from "react-icons/fa";
 import { MdOutlineMyLocation } from "react-icons/md";
 
@@ -12,6 +12,11 @@ function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [unit, setUnit] = useState("metric");
   const [currentUnit, setCurrentUnit] = useState("C");
+
+  useEffect(() => {
+    setWeatherData(false);
+  }, [unit]);
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
@@ -32,27 +37,28 @@ function Weather(props) {
     const apiKey = "d04fb3e0250t4fa0be3579oeba197b2c";
     let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
     axios.get(apiURL).then(handleResponse);
-    console.log(apiURL);
   }
 
   function handleSumbit(event) {
     event.preventDefault();
-    search(city);
+    search(city, unit);
   }
 
   function handleCityChange(event) {
     setCity(event.target.value);
   }
 
-  const handleUnitsClick = (e) => {
-    const button = e.currentTarget;
-    const currentUnit = button.innerText.slice(1);
+  function showToFahrenheit(event) {
+    event.preventDefault();
+    setUnit("imperial");
+    setCurrentUnit("F");
+  }
 
-    const isCelius = currentUnit === "C";
-    button.innerText = isCelius ? "F" : "C";
-    setUnit(isCelius ? "metric" : "imperial");
-    setCurrentUnit(isCelius ? "C" : "F");
-  };
+  function showToCelsius(event) {
+    event.preventDefault();
+    setUnit("metric");
+    setCurrentUnit("C");
+  }
 
   if (weatherData.ready) {
     return (
@@ -87,28 +93,18 @@ function Weather(props) {
             />
           </div>
           <div className="col-8">
-            <div className="btn-group btn-group-toggle" data-toggle="buttons">
-              <label className="btn btn-secondary rounded-circle active">
-                <input
-                  type="radio"
-                  name="options"
-                  id="option1"
-                  autocomplete="off"
-                  onClick={(e) => handleUnitsClick(e)}
-                  defaultChecked
-                />{" "}
+            {/*
+             */}
+            <div className="btn-group btn-group-toggle">
+              <a href="/" onClick={showToCelsius}>
                 °C
-              </label>
-              <label className="btn rounded-circle btn-secondary">
-                <input
-                  type="radio"
-                  name="options"
-                  id="option2"
-                  autocomplete="off"
-                />{" "}
+              </a>
+
+              <a href="/" onClick={showToFahrenheit}>
                 °F
-              </label>
+              </a>
             </div>
+
             <WeatherData
               data={weatherData}
               selectedUnit={unit}
