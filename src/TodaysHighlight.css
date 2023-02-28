@@ -1,0 +1,87 @@
+.TodaysHighlight h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.WindData {
+    height: 200px;
+    background: #1E213A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.HumidityData {
+    height: 200px;
+    background: #1E213A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.InsightData {
+    height: 160px;
+    background: #1E213A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.TodaysHighlight .dataTitle {
+    margin: 15px auto 40px;
+    font-size: 64px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.TodaysHighlight .dataUnit {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 42px;
+}
+
+.TodaysHighlight .windDirectionIcon {
+    width: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 100%;
+}
+
+.TodaysHighlight .windDirection {
+    padding-left: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.TodaysHighlight .humidityBar {
+    width: 229px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: #A09FB1;
+}
+
+.TodaysHighlight .humidity {
+    margin-bottom: 20px;
+}
+
+.TodaysHighlight .footerKey {
+    margin-left: auto;
+}
+
+.TodaysHighlight .footer-link {
+    color: #e7e7eb;
+    text-decoration: none;
+    font-weight: 700;
+}

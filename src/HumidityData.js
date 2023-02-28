@@ -5,9 +5,9 @@ function HumidityData(props) {
   return (
     <div className="HumidityData">
       <p>Humidity</p>
-      <div className="windSpeed">
+      <div className="dataTitle humidity">
         {Math.round(props.dataHumdity)}
-        <span className="speedUnit">%</span>
+        <span className="dataUnit">%</span>
       </div>
       <div className="humidityBar">
         <div>0</div>

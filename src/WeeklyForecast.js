@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import WeeklyForcast from "./WeeklyForcast";
+import Forecast from "./Forecast";
 import "./WeeklyForcast.css";
 import axios from "axios";
 
-function WeatherData(props) {
+function WeeklyForcast(props) {
   const [loaded, setLoad] = useState(false);
   const [forecast, setForecast] = useState(null);
 
@@ -18,13 +18,13 @@ function WeatherData(props) {
 
   if (loaded) {
     return (
-      <div className="WeatherData">
+      <div className="WeeklyForcast">
         <div className="row d-flex justify-content-between mt-3">
           {forecast.map(function (dailyForecast, index) {
             if (index > 0 && index < 6) {
               return (
                 <div className="col" key={index}>
-                  <WeeklyForcast
+                  <Forecast
                     forecastData={dailyForecast}
                     units={props.currentUnit}
                   />
@@ -44,4 +44,4 @@ function WeatherData(props) {
     return null;
   }
 }
-export default WeatherData;
+export default WeeklyForcast;

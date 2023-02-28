@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
-import WeeklyForcast from "./WeeklyForcast";
+import React from "react";
 import WindData from "./WindData";
 import HumidityData from "./HumidityData";
-import PressureData from "./PressureData";
-import "./WeeklyForcast.css";
+import InsightData from "./InsightData";
+import "./TodaysHighlight.css";
 
-function WeatherData(props) {
+function TodaysHighlight(props) {
   return (
-    <div className="WeatherData">
+    <div className="TodaysHighlight">
       <h1>Todays Highlights</h1>
       <div className="row">
         <div className="col-6 mb-3">
@@ -21,7 +20,7 @@ function WeatherData(props) {
         </div>
 
         <div className="col-6 mb-3">
-          <PressureData
+          <InsightData
             title={"Feels Like"}
             dataPressure={props.data.feelsLike}
             unit={props.currentUnit}
@@ -29,7 +28,7 @@ function WeatherData(props) {
         </div>
 
         <div className="col-6 mb-3">
-          <PressureData
+          <InsightData
             title={"Air Pressure"}
             dataPressure={props.data.pressure}
             unit={"mb"}
@@ -39,6 +38,7 @@ function WeatherData(props) {
       <footer className="mt-5">
         This project was coded by Suzanne Sharman and is{" "}
         <a
+          className="footer-link"
           href="https://github.com/suzStar/weather-app-react"
           target="_blank"
           rel="noreferrer"
@@ -50,4 +50,4 @@ function WeatherData(props) {
     </div>
   );
 }
-export default WeatherData;
+export default TodaysHighlight;

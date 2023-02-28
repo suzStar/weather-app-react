@@ -1,7 +1,7 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
 
-function WeeklyForcast(props) {
+function ForecastWeekly(props) {
   let daysOfWeek = props.forecastData.time;
   let iconDescription = props.forecastData.condition.icon;
   let minimumTemp = props.forecastData.temperature.minimum;
@@ -35,7 +35,7 @@ function WeeklyForcast(props) {
   }
 
   return (
-    <div className="WeeklyForcast">
+    <div className="weeklyForcast">
       <div>{ShortHandDate()}</div>
       <div>
         <WeatherIcon code={iconDescription} size={"65px"} height={"90px"} />
@@ -52,4 +52,4 @@ function WeeklyForcast(props) {
     </div>
   );
 }
-export default WeeklyForcast;
+export default ForecastWeekly;

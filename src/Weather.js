@@ -4,9 +4,9 @@ import { MdOutlineMyLocation } from "react-icons/md";
 
 import axios from "axios";
 import "./Weather.css";
-import WeatherInfo from "./WeatherInfo";
-import WeatherData from "./WeatherData";
-import WeeklyInsight from "./WeeklyInsight";
+import TodaysWeather from "./TodaysWeather";
+import WeeklyForecast from "./WeeklyForecast";
+import TodaysHighlight from "./TodaysHighlight";
 
 function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -91,24 +91,22 @@ function Weather(props) {
               </div>
             </form>
 
-            <WeatherInfo
+            <TodaysWeather
               data={weatherData}
               selectedUnit={unit}
               currentUnit={currentUnit}
             />
           </div>
-          <div className="col-8 WeatherInsight">
-            {/*
-             */}
+          <div className="col-8 WeeklyInsight">
             <div className="btn-group unitGroup">
               <a
                 href="/"
                 className={cm("currentUnit", currentUnit === "C" && "active")}
                 onClick={showToCelsius}
               >
+                {" "}
                 °C
               </a>
-
               <a
                 href="/"
                 className={cm("currentUnit", currentUnit === "F" && "active")}
@@ -117,12 +115,12 @@ function Weather(props) {
                 °F
               </a>
             </div>
-            <WeatherData
+            <WeeklyForecast
               data={weatherData}
               selectedUnit={unit}
               currentUnit={currentUnit}
             />
-            <WeeklyInsight
+            <TodaysHighlight
               data={weatherData}
               selectedUnit={unit}
               currentUnit={currentUnit}
