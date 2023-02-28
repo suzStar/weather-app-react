@@ -6,7 +6,7 @@ function PressureData(props) {
       <p>{props.title}</p>
       <div className="windSpeed">
         {Math.round(props.dataPressure)}
-        <span className="speedUnit">{props.unit}</span>
+        <span className="speedUnit">°{props.unit}</span>
       </div>
     </div>
   );

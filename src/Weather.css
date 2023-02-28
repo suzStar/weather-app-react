@@ -9,10 +9,38 @@
   background: #1e213a;
 }
 
-.WeatherData {
+.WeatherInsight {
   font-size: 16px;
   font-weight: 500;
   line-height: 19px;
   background: #100e1d;
-  padding: 80px 50px 20px;
+  padding: 40px 50px 20px;
+}
+
+.unitGroup {
+  display: flex;
+  justify-content: flex-end;
+}
+
+a {
+  color: #e7e7eb;
+  background: #585676;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 6px 65px;
+}
+
+.active {
+  color: #110e3c;
+  background: #e7e7eb;
+}
+
+a:hover {
+  color: #e7e7eb;
+  background: #3c47e9;
 }

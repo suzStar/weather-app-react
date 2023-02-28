@@ -6,6 +6,7 @@ import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 import WeatherData from "./WeatherData";
+import WeeklyInsight from "./WeeklyInsight";
 
 function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -60,6 +61,10 @@ function Weather(props) {
     setCurrentUnit("C");
   }
 
+  function cm(...args) {
+    return args.filter((v) => v).join(" ");
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
@@ -92,20 +97,32 @@ function Weather(props) {
               currentUnit={currentUnit}
             />
           </div>
-          <div className="col-8">
+          <div className="col-8 WeatherInsight">
             {/*
              */}
-            <div className="btn-group btn-group-toggle">
-              <a href="/" onClick={showToCelsius}>
+            <div className="btn-group unitGroup">
+              <a
+                href="/"
+                className={cm("currentUnit", currentUnit === "C" && "active")}
+                onClick={showToCelsius}
+              >
                 °C
               </a>
 
-              <a href="/" onClick={showToFahrenheit}>
+              <a
+                href="/"
+                className={cm("currentUnit", currentUnit === "F" && "active")}
+                onClick={showToFahrenheit}
+              >
                 °F
               </a>
             </div>
-
             <WeatherData
+              data={weatherData}
+              selectedUnit={unit}
+              currentUnit={currentUnit}
+            />
+            <WeeklyInsight
               data={weatherData}
               selectedUnit={unit}
               currentUnit={currentUnit}
