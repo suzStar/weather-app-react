@@ -1,35 +1,34 @@
-.Weather .dailyIcon {
+.WeatherInfo .dailyIcon {
   margin: 130px auto 0;
 }
 
-.Weather .currentTemp {
-  color: #a09fb1;
+.WeatherInfo .currentTemp {
   margin: 45px auto 30px;
 }
 
-.Weather .dayTime {
+.WeatherInfo .dayTime {
   margin-top: 50px;
   font-size: 18px;
   font-weight: 500;
   color: #a09fb1;
 }
 
-.Weather .temperature {
+.WeatherInfo .temperature {
   font-size: 144px;
   font-weight: 500;
 }
 
-.Weather .unit {
+.WeatherInfo .unit {
   color: #e7e7eb;
   font-size: 48px;
   line-height: 42px;
 }
 
-.Weather .cityName {
+.WeatherInfo .cityName {
   font-size: 18px;
 }
 
-.Weather .conditions {
+.WeatherInfo .conditions {
   margin-top: 80px;
   text-transform: capitalize;
   color: #a09fb1;

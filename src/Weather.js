@@ -97,7 +97,7 @@ function Weather(props) {
               currentUnit={currentUnit}
             />
           </div>
-          <div className="col-8 WeeklyInsight">
+          <div className="col-l8 WeeklyInsight">
             <div className="btn-group unitGroup">
               <a
                 href="/"
